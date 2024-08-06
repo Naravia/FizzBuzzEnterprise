@@ -12,6 +12,12 @@ public class ConsoleWriterService : IOutputWriterService
         // into a separate class that can be tested, and the database interaction would be left untested.
         
         // If we wished to test this method, we would do so via integration tests.
+        
+        // If we're called with no output, we don't want to write anything.
+        if (output == string.Empty)
+        {
+            return;
+        }
         Console.WriteLine(output);
     }
 }
