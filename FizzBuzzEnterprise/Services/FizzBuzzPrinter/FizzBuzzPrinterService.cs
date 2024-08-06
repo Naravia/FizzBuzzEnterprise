@@ -30,11 +30,14 @@ public class FizzBuzzPrinterService : IFizzBuzzPrinterService
             _output.Append("Buzz");
         }
         
-        // This will write an empty string if neither condition is met.
-        // This is a deliberate design decision made for the following reasons:
-        //      1. It makes it easy to detect that "no output" was written. This is useful for testing.
-        //      2. It allows for concatenating empty results e.g. for display via table.
-        //      3. If this behaviour is not desired, it can easily be filtered by the caller.
+        if (!(result.Fizz || result.Buzz))
+        {
+            _output.Append(number.ToString());
+        }
+        
+        // The comment that was previously here has been removed.
+        // It is no longer relevant to the current requirements, but can be restored via version control if needed.
+        // This means the comment is always in sync with the relevant version of the code.
         _outputWriter.Write(_output.ToString());
     }
 }
