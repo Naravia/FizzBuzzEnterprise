@@ -45,7 +45,7 @@ public class FizzBuzzPrinterServiceTests
     {
         // This test represents a production bugfix, where an issue is reported that the FizzBuzzService is not being called.
 
-        var fizzBuzzService = Mock.Of<IFizzBuzzService>();
+        var fizzBuzzService = Mock.Of<IFizzBuzzService>(x => x.EvaluateFizzBuzz(5) == new FizzBuzzResult(false, true));
         var service = new FizzBuzzPrinterService(fizzBuzzService, OutputWriter);
         service.EvaluateFizzBuzz(5);
 

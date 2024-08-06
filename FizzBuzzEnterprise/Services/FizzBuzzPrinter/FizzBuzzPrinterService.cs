@@ -19,12 +19,13 @@ public class FizzBuzzPrinterService : IFizzBuzzPrinterService
     public void EvaluateFizzBuzz(int number)
     {
         _output.Clear();
-        if (number % 3 == 0)
+        var result = _fizzBuzzService.EvaluateFizzBuzz(number);
+        if (result.Fizz)
         {
             _output.Append("Fizz");
         }
 
-        if (number % 5 == 0)
+        if (result.Buzz)
         {
             _output.Append("Buzz");
         }
