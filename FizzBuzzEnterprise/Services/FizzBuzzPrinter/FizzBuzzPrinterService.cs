@@ -1,15 +1,18 @@
 ﻿using System.Text;
+using FizzBuzzEnterprise.Services.FizzBuzz;
 using FizzBuzzEnterprise.Services.OutputWriter;
 
 namespace FizzBuzzEnterprise.Services.FizzBuzzPrinter;
 
 public class FizzBuzzPrinterService : IFizzBuzzPrinterService
 {
+    private readonly IFizzBuzzService _fizzBuzzService;
     private readonly IOutputWriterService _outputWriter;
     private readonly StringBuilder _output = new("FizzBuzz".Length);
 
-    public FizzBuzzPrinterService(IOutputWriterService outputWriter)
+    public FizzBuzzPrinterService(IFizzBuzzService fizzBuzzService, IOutputWriterService outputWriter)
     {
+        _fizzBuzzService = fizzBuzzService;
         _outputWriter = outputWriter;
     }
     
