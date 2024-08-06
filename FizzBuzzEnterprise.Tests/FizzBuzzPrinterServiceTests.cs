@@ -26,7 +26,7 @@ public class FizzBuzzPrinterServiceTests
         Assert.DoesNotThrow(() => { _ = new FizzBuzzPrinterService(new FizzBuzzService(), OutputWriter); });
     }
 
-    [TestCase(1, "")]
+    [TestCase(1, "1")]
     [TestCase(3, "Fizz")]
     [TestCase(5, "Buzz")]
     [TestCase(10, "Buzz")]
