@@ -2,7 +2,7 @@ using FizzBuzzEnterprise.Services.FizzBuzz;
 
 namespace FizzBuzzEnterprise.Tests;
 
-public class Tests
+public class FizzBuzzServiceTests
 {
     [Test]
     public void Can_Instantiate_FizzBuzzService()
