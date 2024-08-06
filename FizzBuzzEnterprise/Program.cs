@@ -1,3 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System.ComponentModel.Design;
+using FizzBuzzEnterprise.Services.FizzBuzz;
 
-Console.WriteLine("Hello, World!");
+var serviceContainer = new ServiceContainer();
+serviceContainer.AddService(typeof(IFizzBuzzService), new FizzBuzzService());
